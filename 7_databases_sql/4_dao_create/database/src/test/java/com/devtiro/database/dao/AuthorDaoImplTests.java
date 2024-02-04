@@ -30,7 +30,7 @@ public class AuthorDaoImplTests {
                 .build();
 
         underTest.create(author);
-
+// checks if update method of jdbcTemplate was called with these arguments
         verify(jdbcTemplate).update(
                 eq("INSERT INTO authors (id, name, age) VALUES (?, ?, ?)"),
                 eq(1L), eq("Abigail Rose"), eq(80)

@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties(ignoreUnknown = true) // this ignores extra json properties that are not included in this Book object
 public class Book {
 
   private String isbn;
@@ -20,6 +20,6 @@ public class Book {
 
   private String author;
 
-  @JsonProperty("year")
+  @JsonProperty("year") // this will convert yearPublished in java object to year in json and vice versa via jackson
   private String yearPublished;
 }

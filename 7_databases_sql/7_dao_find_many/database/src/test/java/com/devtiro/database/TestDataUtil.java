@@ -3,6 +3,7 @@ package com.devtiro.database;
 import com.devtiro.database.domain.Author;
 import com.devtiro.database.domain.Book;
 
+// utility classes are usually final
 public final class TestDataUtil {
     private TestDataUtil(){
     }

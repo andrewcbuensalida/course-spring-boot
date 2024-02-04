@@ -19,7 +19,7 @@ public class Book {
 
     private String title;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL) // automatically creates the author
     @JoinColumn(name = "author_id")
     private Author author;
 

@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @NoArgsConstructor
 @Data
 public class PizzaConfig {
-    private String sauce;
-    private String topping;
-    private String crust;
+  private String sauce;
+  private String topping;
+  private String crust;
 }

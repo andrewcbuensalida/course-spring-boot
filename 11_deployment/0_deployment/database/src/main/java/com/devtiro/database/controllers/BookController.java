@@ -31,9 +31,9 @@ public class BookController {
         BookDto savedUpdatedBookDto = bookMapper.mapTo(savedBookEntity);
 
         if(bookExists){
-            return new ResponseEntity(savedUpdatedBookDto, HttpStatus.OK);
+            return new ResponseEntity<>(savedUpdatedBookDto, HttpStatus.OK);
         } else {
-            return new ResponseEntity(savedUpdatedBookDto, HttpStatus.CREATED);
+            return new ResponseEntity<>(savedUpdatedBookDto, HttpStatus.CREATED);
         }
     }
 
@@ -72,9 +72,9 @@ public class BookController {
     }
 
     @DeleteMapping(path = "/books/{isbn}")
-    public ResponseEntity deleteBook(@PathVariable("isbn") String isbn) {
+    public ResponseEntity<Void> deleteBook(@PathVariable("isbn") String isbn) {
         bookService.delete(isbn);
-        return new ResponseEntity(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 }

@@ -4,7 +4,6 @@ import com.devtiro.database.TestDataUtil;
 import com.devtiro.database.domain.dto.AuthorDto;
 import com.devtiro.database.domain.entities.AuthorEntity;
 import com.devtiro.database.services.AuthorService;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -144,7 +143,7 @@ public class AuthorControllerIntegrationTests {
     }
 
     @Test
-    public void testThatFullUpdateAuthorReturnsHttpStatus4200WhenAuthorExists() throws Exception {
+    public void testThatFullUpdateAuthorReturnsHttpStatus200WhenAuthorExists() throws Exception {
         AuthorEntity testAuthorEntityA = TestDataUtil.createTestAuthorEntityA();
         AuthorEntity savedAuthor = authorService.save(testAuthorEntityA);
 
@@ -182,7 +181,7 @@ public class AuthorControllerIntegrationTests {
     }
 
     @Test
-    public void testThatPartialUpdateExistingAuthorReturnsHttpStatus20Ok() throws Exception {
+    public void testThatPartialUpdateExistingAuthorReturnsHttpStatus200Ok() throws Exception {
         AuthorEntity testAuthorEntityA = TestDataUtil.createTestAuthorEntityA();
         AuthorEntity savedAuthor = authorService.save(testAuthorEntityA);
 
@@ -236,5 +235,24 @@ public class AuthorControllerIntegrationTests {
                 MockMvcRequestBuilders.delete("/authors/" + savedAuthor.getId())
                         .contentType(MediaType.APPLICATION_JSON)
         ).andExpect(MockMvcResultMatchers.status().isNoContent());
+    }
+
+    @Test
+    public void testThatGetAuthorReturnsHttpStatus404AfterDeletingAuthor() throws Exception {
+      // Create and save a test author
+      AuthorEntity testAuthorEntityA = TestDataUtil.createTestAuthorEntityA();
+      AuthorEntity savedAuthor = authorService.save(testAuthorEntityA);
+
+      // Delete the author
+      mockMvc.perform(
+          MockMvcRequestBuilders.delete("/authors/" + savedAuthor.getId())
+              .contentType(MediaType.APPLICATION_JSON))
+          .andExpect(MockMvcResultMatchers.status().isNoContent());
+
+      // Attempt to get the deleted author
+      mockMvc.perform(
+          MockMvcRequestBuilders.get("/authors/" + savedAuthor.getId())
+              .contentType(MediaType.APPLICATION_JSON))
+          .andExpect(MockMvcResultMatchers.status().isNotFound());
     }
 }

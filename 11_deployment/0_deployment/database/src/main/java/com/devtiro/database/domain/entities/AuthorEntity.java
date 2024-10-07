@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@Entity
+@Builder // with this, able to do builder pattern, so instead of creating an instance with a constructor, you would do Author.builder().id(1L).build()
+@Entity // This annotation marks the class as a JPA entity so hibernate can map it to a database table
 @Table(name = "authors")
 public class AuthorEntity {
 

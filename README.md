@@ -25,7 +25,9 @@ To run spring-boot app,
 
 
 ##
-JDBCTemplate is for manual sql queries to the database, like in 7_databases_sql. This needs a schema.sql in the resources folder. JPA hibernate, like in 11_deployment, is a higher level abstraction.
+JDBCTemplate is for manual sql queries to the database, like in 7_databases_sql > 9_dao_delete. This needs a schema.sql in the resources folder. 
+
+JPA hibernate by extending CrudRepository, like in 11_deployment, is a higher level abstraction.
 
 putting this in application.properties spring.jpa.hibernate.ddl-auto=update will create database schema for us
 
@@ -50,3 +52,12 @@ The error when the jdk version in the app is 17 but the maven compiler version i
 `[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project api: Fatal error compiling: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field 'com.sun.tools.javac.tree.JCTree qualid' -> [Help 1]`
 The error when the jdk version in the app is 21 but the maven compiler version is 17 is something like:
 `version 21 not compatible`
+
+
+## 
+When running, was getting this error:
+`Error: Could not find or load main class org.apache.maven.wrapper.MavenWrapperMain`
+
+So went in each app's folder and ran this:
+`mvn -N io.takari:maven:wrapper`
+This created a .mvn folder

@@ -24,17 +24,15 @@ To run spring-boot app,
     `./mvnw spring-boot:run`
 
 
-=============================================
-JDBC is for manual sql queries to the database. This needs a schema.sql in the resources folder. JPA hibernate is a higher level abstraction.
+##
+JDBCTemplate is for manual sql queries to the database, like in 7_databases_sql. This needs a schema.sql in the resources folder. JPA hibernate, like in 11_deployment, is a higher level abstraction.
 
 putting this in application.properties spring.jpa.hibernate.ddl-auto=update will create database schema for us
 
-
 PUT replaces the whole object in the database while PATCH replaces only parts of the object
 
-===============================================
+##
 H2 database is an in-memory database for testing purposes
-
 
 ## 
 In order for Explorer > Maven > Part 28 > lifecycles > test to work, command prompt in IDE has to have the correct jdk version. To check the version, 

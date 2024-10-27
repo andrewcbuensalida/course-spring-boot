@@ -24,10 +24,9 @@ To run spring-boot app,
     `./mvnw spring-boot:run`
 
 
-##
-JDBCTemplate is for manual sql queries to the database, like in 7_databases_sql > 9_dao_delete. This needs a schema.sql in the resources folder. 
+## JDBCTemplate is for manual sql queries to the database, like in 7_databases_sql > 9_dao_delete. This needs a schema.sql in the resources folder. 
 
-JPA hibernate by extending CrudRepository, like in 11_deployment, is a higher level abstraction.
+## JPA hibernate by extending CrudRepository, like in 11_deployment, is a higher level abstraction.
 
 putting this in application.properties spring.jpa.hibernate.ddl-auto=update will create database schema for us
 
@@ -37,10 +36,10 @@ PUT replaces the whole object in the database while PATCH replaces only parts of
 H2 database is an in-memory database for testing purposes
 
 ## 
-In order for Explorer > Maven > Part 28 > lifecycles > test to work, command prompt in IDE has to have the correct jdk version. To check the version, 
+In order for Explorer > Maven > 11_deployment > lifecycles > test to work, command prompt in IDE has to have the correct jdk version. To check the version, 
 `mvn --version`
 And also check the local mvn with
-`"c:\swe\code\spring6yt\Part28-Project using Spring Search Feature\mvnw.cmd" --version`
+`"c:\swe\code\course-spring-boot\11_deployment\mvnw.cmd" --version`
 Sometimes you have to close all the vs code windows if you recently changed your environment variables JAVA_HOME path.
 If you want to temporarily set the environment variable in that specific terminal, 
 `set JAVA_HOME=C:\Program Files\Java\jdk-17`

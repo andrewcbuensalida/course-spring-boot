@@ -6,6 +6,7 @@ import com.devtiro.database.mappers.Mapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
+// Instead of this, it could be manual mapping
 @Component
 public class AuthorMapperImpl implements Mapper<AuthorEntity, AuthorDto> {
 

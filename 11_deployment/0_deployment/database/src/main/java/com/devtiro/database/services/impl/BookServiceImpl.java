@@ -36,6 +36,7 @@ public class BookServiceImpl implements BookService {
                 .collect(Collectors.toList());
     }
 
+    // Not being used
     @Override
     public Page<BookEntity> findAll(Pageable pageable) {
         return bookRepository.findAll(pageable);

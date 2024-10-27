@@ -22,6 +22,8 @@ public class DatabaseApplication implements CommandLineRunner {
 		SpringApplication.run(DatabaseApplication.class, args);
 	}
 
+  // this runs on startup. Alternatively it can be a bean
+  // https://www.youtube.com/watch?v=gBN8x4yN5Ks
 	@Override
 	public void run(final String... args) {
 		log.info("Datasource: " + dataSource.toString());

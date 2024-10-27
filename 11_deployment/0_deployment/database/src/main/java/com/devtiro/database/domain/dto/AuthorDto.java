@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+// This could maybe be a record instead of a class?
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

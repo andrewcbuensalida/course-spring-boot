@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Component
-@Scope("prototype") // 1 bean per request, not sinleton
+@Scope("prototype") // 1 bean per request, not singleton
 public class Book {
 
     private String isbn;

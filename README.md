@@ -24,7 +24,7 @@ To run spring-boot app,
     `./mvnw spring-boot:run`
 
 
-## JDBCTemplate is for manual sql queries to the database, like in 7_databases_sql > 9_dao_delete. This needs a schema.sql in the resources folder. 
+## JDBCTemplate is for manual sql queries to the database, like in 7_databases_sql > 9_dao_delete. This needs a schema.sql in the resources folder. Note that this is different from spring data jdbc.
 
 ## JPA hibernate by extending CrudRepository, like in 11_deployment, is a higher level abstraction.
 

@@ -18,6 +18,8 @@ public class Book {
 
     private String isbn;
     private String title;
+    // alternatively, could do AggregateReference
+    // https://www.youtube.com/watch?v=l_T0nQNbFiM
     private Long authorId;
 
 }
